@@ -1,0 +1,59 @@
+version: '3.8'
+services:
+  app:
+    platform: linux/x86_64
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: utp-app-image
+    container_name: app
+    restart: unless-stopped
+    tty: true
+    working_dir: /var/www/html
+    volumes:
+      - .:/var/www/html
+    ports:
+      - "80:80"
+    networks:
+      - app-network
+    depends_on:
+      - db_utp
+      - phpmyadmin
+
+  db_utp:
+    platform: linux/x86_64
+    image: mysql:5.7
+    container_name: db_utp
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: utp
+      MYSQL_ROOT_PASSWORD: Panama.01
+      MYSQL_PASSWORD: Panama.01
+      MYSQL_USER: utp
+    volumes:
+      - dbdata_utp:/var/lib/mysql
+    networks:
+      - app-network
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    restart: unless-stopped
+    depends_on:
+      - db_utp
+    environment:
+      PMA_HOST: db_utp
+      PMA_USER: root
+      PMA_PASSWORD: Panama.01
+    ports:
+      - "8081:80"   # Puertos diferentes en el host para evitar conflicto
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  dbdata_utp:
+    driver: local
