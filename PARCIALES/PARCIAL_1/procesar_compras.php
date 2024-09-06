@@ -36,7 +36,6 @@ $carrito = [
 // • Impuesto
 // • Total a pagar
 
-
 $subtotal = 0;
 $descuento = 0;
 
@@ -47,13 +46,15 @@ foreach ($carrito as $producto => $cantidad) {
 $descuento = calcular_descuento($subtotal);
 
 echo "<h1>Resumen de la compra</h1>";
+echo "<hr>";
 echo "<ul>";
 foreach ($carrito as $producto => $cantidad) {
     echo "<li>$producto: $cantidad * B/. " . $productos[$producto] . " = B/. " . $productos[$producto] * $cantidad . "</li>";
 }
 
 echo "</ul>";
-echo "<p>Subtotal: B/. " . $subtotal . "</p>";
+echo "<hr>";
+echo "<p>Subtotal:  B/. " . $subtotal . "</p>";
 echo "<p>Descuento: B/. " . $descuento . "</p>";
-echo "<p>Impuesto: B/. " . aplicar_impuesto($subtotal) . "</p>";
+echo "<p>Impuesto:  B/. " . aplicar_impuesto($subtotal) . "</p>";
 echo "<h2>Total a pagar: B/. " . calcular_total($subtotal, $descuento, aplicar_impuesto($subtotal)) . "</h2>";
