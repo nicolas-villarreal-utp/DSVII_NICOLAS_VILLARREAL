@@ -94,28 +94,44 @@ function generarResumenVentas($ventas) {
 
     $clienteMasComprasId = array_search(max($ventasPorCliente), $ventasPorCliente);
     $resumen["cliente_mas_compras"] = $clienteMasComprasId;
-
+    
     return $resumen;
 }
 
 $ventas = [
-    ["producto_id" => 1, "cliente_id" => 101, "cantidad" => 2, "fecha" => "2021-10-01"],
-    ["producto_id" => 2, "cliente_id" => 102, "cantidad" => 1, "fecha" => "2021-10-02"],
-    ["producto_id" => 1, "cliente_id" => 101, "cantidad" => 3, "fecha" => "2021-10-03"],
-    ["producto_id" => 3, "cliente_id" => 103, "cantidad" => 1, "fecha" => "2021-10-04"],
-    ["producto_id" => 2, "cliente_id" => 102, "cantidad" => 2, "fecha" => "2021-10-05"],
-    ["producto_id" => 4, "cliente_id" => 101, "cantidad" => 1, "fecha" => "2021-10-06"],
-    ["producto_id" => 5, "cliente_id" => 103, "cantidad" => 2, "fecha" => "2021-10-07"],
-    ["producto_id" => 1, "cliente_id" => 102, "cantidad" => 1, "fecha" => "2021-10-08"],
-    ["producto_id" => 2, "cliente_id" => 101, "cantidad" => 3, "fecha" => "2021-10-09"],
-    ["producto_id" => 3, "cliente_id" => 103, "cantidad" => 1, "fecha" => "2021-10-10"]
+    ["producto_id" => 1, "cliente_id" => 101, "cantidad" => 2, "fecha" => "2024-9-01"],
+    ["producto_id" => 2, "cliente_id" => 102, "cantidad" => 1, "fecha" => "2024-9-02"],
+    ["producto_id" => 1, "cliente_id" => 101, "cantidad" => 3, "fecha" => "2024-9-03"],
+    ["producto_id" => 3, "cliente_id" => 103, "cantidad" => 1, "fecha" => "2024-9-04"],
+    ["producto_id" => 2, "cliente_id" => 102, "cantidad" => 2, "fecha" => "2024-9-05"],
+    ["producto_id" => 4, "cliente_id" => 101, "cantidad" => 1, "fecha" => "2024-9-06"],
+    ["producto_id" => 5, "cliente_id" => 103, "cantidad" => 2, "fecha" => "2024-9-07"],
+    ["producto_id" => 1, "cliente_id" => 102, "cantidad" => 1, "fecha" => "2024-9-08"],
+    ["producto_id" => 2, "cliente_id" => 101, "cantidad" => 3, "fecha" => "2024-9-09"],
+    ["producto_id" => 3, "cliente_id" => 103, "cantidad" => 1, "fecha" => "2024-9-10"]
 ];
 
 $resumenVentas = generarResumenVentas($ventas);
 
 echo "<br>Resumen de ventas:<br>";
 echo "Total de ventas: {$resumenVentas['total_ventas']}<br>";   
-echo "Producto más vendido: {$resumenVentas['producto_mas_vendido']}<br>";
-echo "Cliente que más ha comprado: {$resumenVentas['cliente_mas_compras']}<br>";
+
+foreach ($tiendaData['productos'] as $producto) {
+    if ($producto['id'] === $resumenVentas['producto_mas_vendido']) {
+        $nombreProducto = $producto['nombre'];
+        break; // Salir del bucle una vez encontrado
+    }
+}
+
+echo "Producto más vendido: {$resumenVentas['producto_mas_vendido']} - {$nombreProducto}<br>";
+
+foreach ($tiendaData['clientes'] as $cliente) {
+    if ($cliente['id'] === $resumenVentas['cliente_mas_compras']) {
+        $nombreCliente = $cliente['nombre'];
+        break; // Salir del bucle una vez encontrado
+    }
+}
+
+echo "Cliente que más ha comprado: {$resumenVentas['cliente_mas_compras']} - {$nombreCliente}<br>";
 
 ?>
