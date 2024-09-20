@@ -1,0 +1,722 @@
+[
+    {
+        "id": 1,
+        "nombre": "Juan Pérez",
+        "edad": 20,
+        "carrera": "Ingeniería en Sistemas",
+        "materias": [
+            {
+                "nombre": "Matemáticas",
+                "calificacion": 95
+            },
+            {
+                "nombre": "Programación",
+                "calificacion": 88
+            },
+            {
+                "nombre": "Bases de Datos",
+                "calificacion": 92
+            },
+            {
+                "nombre": "Redes",
+                "calificacion": 85
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "nombre": "Ana García",
+        "edad": 22,
+        "carrera": "Arquitectura",
+        "materias": [
+            {
+                "nombre": "Diseño Arquitectónico",
+                "calificacion": 90
+            },
+            {
+                "nombre": "Historia del Arte",
+                "calificacion": 85
+            },
+            {
+                "nombre": "Estructuras",
+                "calificacion": 88
+            },
+            {
+                "nombre": "Urbanismo",
+                "calificacion": 92
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "nombre": "Luis Martínez",
+        "edad": 21,
+        "carrera": "Psicología",
+        "materias": [
+            {
+                "nombre": "Psicología General",
+                "calificacion": 89
+            },
+            {
+                "nombre": "Psicología del Desarrollo",
+                "calificacion": 94
+            },
+            {
+                "nombre": "Técnicas de Entrevista",
+                "calificacion": 90
+            },
+            {
+                "nombre": "Psicopatología",
+                "calificacion": 87
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "nombre": "María López",
+        "edad": 19,
+        "carrera": "Biología",
+        "materias": [
+            {
+                "nombre": "Biología Celular",
+                "calificacion": 91
+            },
+            {
+                "nombre": "Genética",
+                "calificacion": 93
+            },
+            {
+                "nombre": "Ecología",
+                "calificacion": 89
+            },
+            {
+                "nombre": "Botánica",
+                "calificacion": 88
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "nombre": "Pedro Ruiz",
+        "edad": 23,
+        "carrera": "Derecho",
+        "materias": [
+            {
+                "nombre": "Introducción al Derecho",
+                "calificacion": 95
+            },
+            {
+                "nombre": "Derecho Civil",
+                "calificacion": 90
+            },
+            {
+                "nombre": "Derecho Penal",
+                "calificacion": 88
+            },
+            {
+                "nombre": "Derecho Constitucional",
+                "calificacion": 92
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "nombre": "Sofía Torres",
+        "edad": 20,
+        "carrera": "Medicina",
+        "materias": [
+            {
+                "nombre": "Anatomía",
+                "calificacion": 90
+            },
+            {
+                "nombre": "Fisiología",
+                "calificacion": 91
+            },
+            {
+                "nombre": "Farmacología",
+                "calificacion": 89
+            },
+            {
+                "nombre": "Bioquímica",
+                "calificacion": 87
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "nombre": "Diego Sánchez",
+        "edad": 21,
+        "carrera": "Ciencias de la Computación",
+        "materias": [
+            {
+                "nombre": "Estructuras de Datos",
+                "calificacion": 94
+            },
+            {
+                "nombre": "Algoritmos",
+                "calificacion": 90
+            },
+            {
+                "nombre": "Sistemas Operativos",
+                "calificacion": 92
+            },
+            {
+                "nombre": "Inteligencia Artificial",
+                "calificacion": 88
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "nombre": "Claudia Jiménez",
+        "edad": 22,
+        "carrera": "Economía",
+        "materias": [
+            {
+                "nombre": "Microeconomía",
+                "calificacion": 92
+            },
+            {
+                "nombre": "Macroeconomía",
+                "calificacion": 90
+            },
+            {
+                "nombre": "Econometría",
+                "calificacion": 85
+            },
+            {
+                "nombre": "Teoría del Consumo",
+                "calificacion": 88
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "nombre": "Javier Fernández",
+        "edad": 24,
+        "carrera": "Ingeniería Mecánica",
+        "materias": [
+            {
+                "nombre": "Termodinámica",
+                "calificacion": 91
+            },
+            {
+                "nombre": "Mecánica de Fluidos",
+                "calificacion": 90
+            },
+            {
+                "nombre": "Resistencia de Materiales",
+                "calificacion": 88
+            },
+            {
+                "nombre": "Diseño Mecánico",
+                "calificacion": 89
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "nombre": "Gabriela Castro",
+        "edad": 19,
+        "carrera": "Trabajo Social",
+        "materias": [
+            {
+                "nombre": "Teoría del Trabajo Social",
+                "calificacion": 93
+            },
+            {
+                "nombre": "Métodos de Investigación",
+                "calificacion": 90
+            },
+            {
+                "nombre": "Políticas Sociales",
+                "calificacion": 88
+            },
+            {
+                "nombre": "Intervención Social",
+                "calificacion": 91
+            }
+        ]
+    },
+    {
+        "id": 11,
+        "nombre": "Andrés Morales",
+        "edad": 23,
+        "carrera": "Ingeniería Civil",
+        "materias": [
+            {
+                "nombre": "Cálculo",
+                "calificacion": 89
+            },
+            {
+                "nombre": "Mecánica de Suelos",
+                "calificacion": 92
+            },
+            {
+                "nombre": "Hidráulica",
+                "calificacion": 91
+            },
+            {
+                "nombre": "Construcción",
+                "calificacion": 90
+            }
+        ]
+    },
+    {
+        "id": 12,
+        "nombre": "Carla Núñez",
+        "edad": 21,
+        "carrera": "Filosofía",
+        "materias": [
+            {
+                "nombre": "Ética",
+                "calificacion": 92
+            },
+            {
+                "nombre": "Historia de la Filosofía",
+                "calificacion": 94
+            },
+            {
+                "nombre": "Lógica",
+                "calificacion": 90
+            },
+            {
+                "nombre": "Estética",
+                "calificacion": 89
+            }
+        ]
+    },
+    {
+        "id": 13,
+        "nombre": "Ricardo Herrera",
+        "edad": 20,
+        "carrera": "Ciencias Políticas",
+        "materias": [
+            {
+                "nombre": "Teoría Política",
+                "calificacion": 90
+            },
+            {
+                "nombre": "Sistemas de Gobierno",
+                "calificacion": 88
+            },
+            {
+                "nombre": "Relaciones Internacionales",
+                "calificacion": 91
+            },
+            {
+                "nombre": "Políticas Públicas",
+                "calificacion": 87
+            }
+        ]
+    },
+    {
+        "id": 14,
+        "nombre": "Lucía Romero",
+        "edad": 22,
+        "carrera": "Comunicación",
+        "materias": [
+            {
+                "nombre": "Teoría de la Comunicación",
+                "calificacion": 93
+            },
+            {
+                "nombre": "Producción Audiovisual",
+                "calificacion": 90
+            },
+            {
+                "nombre": "Comunicación Organizacional",
+                "calificacion": 88
+            },
+            {
+                "nombre": "Periodismo",
+                "calificacion": 91
+            }
+        ]
+    },
+    {
+        "id": 15,
+        "nombre": "Fernando Medina",
+        "edad": 21,
+        "carrera": "Diseño Gráfico",
+        "materias": [
+            {
+                "nombre": "Fundamentos del Diseño",
+                "calificacion": 88
+            },
+            {
+                "nombre": "Tipografía",
+                "calificacion": 90
+            },
+            {
+                "nombre": "Fotografía",
+                "calificacion": 92
+            },
+            {
+                "nombre": "Ilustración",
+                "calificacion": 89
+            }
+        ]
+    },
+    {
+        "id": 16,
+        "nombre": "Natalia Paredes",
+        "edad": 19,
+        "carrera": "Química",
+        "materias": [
+            {
+                "nombre": "Química General",
+                "calificacion": 90
+            },
+            {
+                "nombre": "Química Orgánica",
+                "calificacion": 91
+            },
+            {
+                "nombre": "Química Inorgánica",
+                "calificacion": 88
+            },
+            {
+                "nombre": "Bioquímica",
+                "calificacion": 89
+            }
+        ]
+    },
+    {
+        "id": 17,
+        "nombre": "Pablo Salazar",
+        "edad": 23,
+        "carrera": "Historia",
+        "materias": [
+            {
+                "nombre": "Historia Universal",
+                "calificacion": 92
+            },
+            {
+                "nombre": "Historia de México",
+                "calificacion": 89
+            },
+            {
+                "nombre": "Teoría Histórica",
+                "calificacion": 90
+            },
+            {
+                "nombre": "Historia Contemporánea",
+                "calificacion": 91
+            }
+        ]
+    },
+    {
+        "id": 18,
+        "nombre": "Valeria Cordero",
+        "edad": 21,
+        "carrera": "Estadística",
+        "materias": [
+            {
+                "nombre": "Estadística Descriptiva",
+                "calificacion": 90
+            },
+            {
+                "nombre": "Inferencia Estadística",
+                "calificacion": 89
+            },
+            {
+                "nombre": "Probabilidades",
+                "calificacion": 91
+            },
+            {
+                "nombre": "Diseño de Experimentos",
+                "calificacion": 88
+            }
+        ]
+    },
+    {
+        "id": 19,
+        "nombre": "Arturo Cabrera",
+        "edad": 20,
+        "carrera": "Matemáticas",
+        "materias": [
+            {
+                "nombre": "Cálculo Diferencial",
+                "calificacion": 91
+            },
+            {
+                "nombre": "Álgebra Lineal",
+                "calificacion": 90
+            },
+            {
+                "nombre": "Ecuaciones Diferenciales",
+                "calificacion": 89
+            },
+            {
+                "nombre": "Análisis Numérico",
+                "calificacion": 92
+            }
+        ]
+    },
+    {
+        "id": 20,
+        "nombre": "Isabel Torres",
+        "edad": 22,
+        "carrera": "Administración",
+        "materias": [
+            {
+                "nombre": "Principios de Administración",
+                "calificacion": 93
+            },
+            {
+                "nombre": "Comportamiento Organizacional",
+                "calificacion": 91
+            },
+            {
+                "nombre": "Marketing",
+                "calificacion": 88
+            },
+            {
+                "nombre": "Finanzas",
+                "calificacion": 90
+            }
+        ]
+    },
+    {
+        "id": 21,
+        "nombre": "Oscar Vega",
+        "edad": 21,
+        "carrera": "Ingeniería Electrónica",
+        "materias": [
+            {
+                "nombre": "Circuitos Eléctricos",
+                "calificacion": 90
+            },
+            {
+                "nombre": "Sistemas Digitales",
+                "calificacion": 92
+            },
+            {
+                "nombre": "Electromagnetismo",
+                "calificacion": 89
+            },
+            {
+                "nombre": "Control de Sistemas",
+                "calificacion": 88
+            }
+        ]
+    },
+    {
+        "id": 22,
+        "nombre": "Renata Aguirre",
+        "edad": 20,
+        "carrera": "Veterinaria",
+        "materias": [
+            {
+                "nombre": "Anatomía Animal",
+                "calificacion": 91
+            },
+            {
+                "nombre": "Fisiología Veterinaria",
+                "calificacion": 90
+            },
+            {
+                "nombre": "Nutrición Animal",
+                "calificacion": 88
+            },
+            {
+                "nombre": "Cirugía Veterinaria",
+                "calificacion": 89
+            }
+        ]
+    },
+    {
+        "id": 23,
+        "nombre": "Hugo Ramírez",
+        "edad": 23,
+        "carrera": "Sociología",
+        "materias": [
+            {
+                "nombre": "Teoría Sociológica",
+                "calificacion": 92
+            },
+            {
+                "nombre": "Métodos Cuantitativos",
+                "calificacion": 90
+            },
+            {
+                "nombre": "Sociología Urbana",
+                "calificacion": 88
+            },
+            {
+                "nombre": "Sociología Rural",
+                "calificacion": 91
+            }
+        ]
+    },
+    {
+        "id": 24,
+        "nombre": "Marta Ceballos",
+        "edad": 21,
+        "carrera": "Antropología",
+        "materias": [
+            {
+                "nombre": "Antropología Cultural",
+                "calificacion": 90
+            },
+            {
+                "nombre": "Antropología Social",
+                "calificacion": 92
+            },
+            {
+                "nombre": "Métodos de Investigación",
+                "calificacion": 89
+            },
+            {
+                "nombre": "Antropología Física",
+                "calificacion": 88
+            }
+        ]
+    },
+    {
+        "id": 25,
+        "nombre": "Gustavo Parra",
+        "edad": 22,
+        "carrera": "Geografía",
+        "materias": [
+            {
+                "nombre": "Geografía Física",
+                "calificacion": 91
+            },
+            {
+                "nombre": "Geografía Humana",
+                "calificacion": 90
+            },
+            {
+                "nombre": "Cartografía",
+                "calificacion": 88
+            },
+            {
+                "nombre": "Planificación Territorial",
+                "calificacion": 89
+            }
+        ]
+    },
+    {
+        "id": 26,
+        "nombre": "Nadia Herrera",
+        "edad": 19,
+        "carrera": "Lingüística",
+        "materias": [
+            {
+                "nombre": "Fonética",
+                "calificacion": 92
+            },
+            {
+                "nombre": "Sintaxis",
+                "calificacion": 90
+            },
+            {
+                "nombre": "Semántica",
+                "calificacion": 88
+            },
+            {
+                "nombre": "Psicolingüística",
+                "calificacion": 89
+            }
+        ]
+    },
+    {
+        "id": 27,
+        "nombre": "Iván Cruz",
+        "edad": 20,
+        "carrera": "Literatura",
+        "materias": [
+            {
+                "nombre": "Literatura Universal",
+                "calificacion": 91
+            },
+            {
+                "nombre": "Teoría Literaria",
+                "calificacion": 89
+            },
+            {
+                "nombre": "Literatura Hispanoamericana",
+                "calificacion": 88
+            },
+            {
+                "nombre": "Literatura Mexicana",
+                "calificacion": 90
+            }
+        ]
+    },
+    {
+        "id": 28,
+        "nombre": "Esteban Silva",
+        "edad": 23,
+        "carrera": "Teología",
+        "materias": [
+            {
+                "nombre": "Historia de la Teología",
+                "calificacion": 90
+            },
+            {
+                "nombre": "Teología Sistemática",
+                "calificacion": 92
+            },
+            {
+                "nombre": "Ética Teológica",
+                "calificacion": 88
+            },
+            {
+                "nombre": "Biblia y Exégesis",
+                "calificacion": 91
+            }
+        ]
+    },
+    {
+        "id": 29,
+        "nombre": "Mariana Ortega",
+        "edad": 21,
+        "carrera": "Relaciones Internacionales",
+        "materias": [
+            {
+                "nombre": "Teoría de Relaciones Internacionales",
+                "calificacion": 93
+            },
+            {
+                "nombre": "Política Exterior",
+                "calificacion": 90
+            },
+            {
+                "nombre": "Derecho Internacional",
+                "calificacion": 89
+            },
+            {
+                "nombre": "Economía Internacional",
+                "calificacion": 88
+            }
+        ]
+    },
+    {
+        "id": 30,
+        "nombre": "Diego León",
+        "edad": 22,
+        "carrera": "Biotecnología",
+        "materias": [
+            {
+                "nombre": "Biotecnología Vegetal",
+                "calificacion": 91
+            },
+            {
+                "nombre": "Biotecnología Animal",
+                "calificacion": 90
+            },
+            {
+                "nombre": "Genómica",
+                "calificacion": 88
+            },
+            {
+                "nombre": "Bioinformática",
+                "calificacion": 89
+            }
+        ]
+    }
+]
