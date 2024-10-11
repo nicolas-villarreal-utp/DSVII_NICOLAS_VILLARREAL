@@ -45,6 +45,30 @@ class Estudiante {
             'promedio' => $this->obtenerPromedio()
         ];
     }
+
+    //Guardar en el archivo JSON
+    public function guardar() {
+        $estudiantes = [];
+        if (file_exists('estudiantes.json')) {
+            $estudiantes = json_decode(file_get_contents('estudiantes.json'), true);
+        }
+        $estudiantes[] = $this->obtenerDetalles();
+        file_put_contents('estudiantes.json', json_encode($estudiantes, JSON_PRETTY_PRINT));
+    }
+
+    //Buscar en el archivo JSON
+    public static function buscar($id) {
+        if (file_exists('estudiantes.json')) {
+            $estudiantes = json_decode(file_get_contents('estudiantes.json'), true);
+            foreach ($estudiantes as $estudiante) {
+                if ($estudiante['id'] == $id) {
+                    return $estudiante;
+                }
+            }
+        }
+        return null;
+    }
+
 }
 
 ?>

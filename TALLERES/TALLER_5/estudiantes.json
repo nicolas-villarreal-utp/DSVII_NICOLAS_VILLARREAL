@@ -27,23 +27,23 @@
         "id": 2,
         "nombre": "Ana García",
         "edad": 22,
-        "carrera": "Arquitectura",
+        "carrera": "Ingeniería en Sistemas",
         "materias": [
             {
-                "nombre": "Diseño Arquitectónico",
+                "nombre": "Algoritmos",
                 "calificacion": 90
             },
             {
-                "nombre": "Historia del Arte",
-                "calificacion": 85
-            },
-            {
-                "nombre": "Estructuras",
-                "calificacion": 88
-            },
-            {
-                "nombre": "Urbanismo",
+                "nombre": "Estructuras de Datos",
                 "calificacion": 92
+            },
+            {
+                "nombre": "Sistemas Operativos",
+                "calificacion": 89
+            },
+            {
+                "nombre": "Inteligencia Artificial",
+                "calificacion": 91
             }
         ]
     },
@@ -51,47 +51,47 @@
         "id": 3,
         "nombre": "Luis Martínez",
         "edad": 21,
-        "carrera": "Psicología",
+        "carrera": "Ingeniería en Sistemas",
         "materias": [
             {
-                "nombre": "Psicología General",
-                "calificacion": 89
+                "nombre": "Redes",
+                "calificacion": 88
             },
             {
-                "nombre": "Psicología del Desarrollo",
+                "nombre": "Programación Avanzada",
                 "calificacion": 94
             },
             {
-                "nombre": "Técnicas de Entrevista",
-                "calificacion": 90
+                "nombre": "Desarrollo Web",
+                "calificacion": 91
             },
             {
-                "nombre": "Psicopatología",
-                "calificacion": 87
+                "nombre": "Seguridad Informática",
+                "calificacion": 90
             }
         ]
     },
     {
         "id": 4,
-        "nombre": "María López",
-        "edad": 19,
-        "carrera": "Biología",
+        "nombre": "Sofía Torres",
+        "edad": 20,
+        "carrera": "Medicina",
         "materias": [
             {
-                "nombre": "Biología Celular",
+                "nombre": "Anatomía",
+                "calificacion": 90
+            },
+            {
+                "nombre": "Fisiología",
                 "calificacion": 91
             },
             {
-                "nombre": "Genética",
-                "calificacion": 93
-            },
-            {
-                "nombre": "Ecología",
+                "nombre": "Bioquímica",
                 "calificacion": 89
             },
             {
-                "nombre": "Botánica",
-                "calificacion": 88
+                "nombre": "Farmacología",
+                "calificacion": 87
             }
         ]
     },
@@ -99,6 +99,54 @@
         "id": 5,
         "nombre": "Pedro Ruiz",
         "edad": 23,
+        "carrera": "Medicina",
+        "materias": [
+            {
+                "nombre": "Patología",
+                "calificacion": 92
+            },
+            {
+                "nombre": "Pediatría",
+                "calificacion": 90
+            },
+            {
+                "nombre": "Medicina Interna",
+                "calificacion": 88
+            },
+            {
+                "nombre": "Cirugía",
+                "calificacion": 91
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "nombre": "María López",
+        "edad": 19,
+        "carrera": "Medicina",
+        "materias": [
+            {
+                "nombre": "Neurología",
+                "calificacion": 94
+            },
+            {
+                "nombre": "Ginecología",
+                "calificacion": 90
+            },
+            {
+                "nombre": "Cardiología",
+                "calificacion": 89
+            },
+            {
+                "nombre": "Urgencias",
+                "calificacion": 91
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "nombre": "Javier Fernández",
+        "edad": 24,
         "carrera": "Derecho",
         "materias": [
             {
@@ -120,98 +168,50 @@
         ]
     },
     {
-        "id": 6,
-        "nombre": "Sofía Torres",
-        "edad": 20,
-        "carrera": "Medicina",
-        "materias": [
-            {
-                "nombre": "Anatomía",
-                "calificacion": 90
-            },
-            {
-                "nombre": "Fisiología",
-                "calificacion": 91
-            },
-            {
-                "nombre": "Farmacología",
-                "calificacion": 89
-            },
-            {
-                "nombre": "Bioquímica",
-                "calificacion": 87
-            }
-        ]
-    },
-    {
-        "id": 7,
-        "nombre": "Diego Sánchez",
-        "edad": 21,
-        "carrera": "Ciencias de la Computación",
-        "materias": [
-            {
-                "nombre": "Estructuras de Datos",
-                "calificacion": 94
-            },
-            {
-                "nombre": "Algoritmos",
-                "calificacion": 90
-            },
-            {
-                "nombre": "Sistemas Operativos",
-                "calificacion": 92
-            },
-            {
-                "nombre": "Inteligencia Artificial",
-                "calificacion": 88
-            }
-        ]
-    },
-    {
         "id": 8,
         "nombre": "Claudia Jiménez",
         "edad": 22,
-        "carrera": "Economía",
+        "carrera": "Derecho",
         "materias": [
             {
-                "nombre": "Microeconomía",
-                "calificacion": 92
-            },
-            {
-                "nombre": "Macroeconomía",
+                "nombre": "Teoría del Derecho",
                 "calificacion": 90
             },
             {
-                "nombre": "Econometría",
-                "calificacion": 85
+                "nombre": "Derecho Mercantil",
+                "calificacion": 89
             },
             {
-                "nombre": "Teoría del Consumo",
+                "nombre": "Derecho Administrativo",
+                "calificacion": 91
+            },
+            {
+                "nombre": "Derecho Internacional",
                 "calificacion": 88
             }
         ]
     },
     {
         "id": 9,
-        "nombre": "Javier Fernández",
-        "edad": 24,
-        "carrera": "Ingeniería Mecánica",
+        "nombre": "Diego Sánchez",
+        "edad": 21,
+        "carrera": "Derecho",
         "materias": [
             {
-                "nombre": "Termodinámica",
+                "nombre": "Derecho Laboral",
                 "calificacion": 91
             },
             {
-                "nombre": "Mecánica de Fluidos",
-                "calificacion": 90
+                "nombre": "Derecho Tributario",
+                "calificacion": 89
             },
             {
-                "nombre": "Resistencia de Materiales",
+                "nombre": "Práctica Jurídica",
                 "calificacion": 88
             },
             {
-                "nombre": "Diseño Mecánico",
-                "calificacion": 89
+                "nombre": "Ética Profesional",
+                "calificacion": 92
             }
         ]
     },
@@ -219,503 +219,503 @@
         "id": 10,
         "nombre": "Gabriela Castro",
         "edad": 19,
-        "carrera": "Trabajo Social",
+        "carrera": "Ingeniería en Sistemas",
         "materias": [
             {
-                "nombre": "Teoría del Trabajo Social",
-                "calificacion": 93
+                "nombre": "Matemáticas Discretas",
+                "calificacion": 92
             },
             {
-                "nombre": "Métodos de Investigación",
+                "nombre": "Análisis de Algoritmos",
                 "calificacion": 90
             },
             {
-                "nombre": "Políticas Sociales",
+                "nombre": "Programación de Aplicaciones",
                 "calificacion": 88
             },
             {
-                "nombre": "Intervención Social",
+                "nombre": "Tecnologías Web",
                 "calificacion": 91
             }
         ]
     },
     {
         "id": 11,
-        "nombre": "Andrés Morales",
-        "edad": 23,
-        "carrera": "Ingeniería Civil",
+        "nombre": "Ricardo Herrera",
+        "edad": 20,
+        "carrera": "Medicina",
         "materias": [
             {
-                "nombre": "Cálculo",
+                "nombre": "Farmacología",
                 "calificacion": 89
             },
             {
-                "nombre": "Mecánica de Suelos",
+                "nombre": "Fisiología",
                 "calificacion": 92
             },
             {
-                "nombre": "Hidráulica",
-                "calificacion": 91
+                "nombre": "Microbiología",
+                "calificacion": 90
             },
             {
-                "nombre": "Construcción",
-                "calificacion": 90
+                "nombre": "Salud Pública",
+                "calificacion": 88
             }
         ]
     },
     {
         "id": 12,
-        "nombre": "Carla Núñez",
-        "edad": 21,
-        "carrera": "Filosofía",
+        "nombre": "Fernando Medina",
+        "edad": 23,
+        "carrera": "Derecho",
         "materias": [
             {
-                "nombre": "Ética",
-                "calificacion": 92
-            },
-            {
-                "nombre": "Historia de la Filosofía",
-                "calificacion": 94
-            },
-            {
-                "nombre": "Lógica",
+                "nombre": "Derecho de Familia",
                 "calificacion": 90
             },
             {
-                "nombre": "Estética",
+                "nombre": "Derecho de la Propiedad",
                 "calificacion": 89
+            },
+            {
+                "nombre": "Derecho Ambiental",
+                "calificacion": 91
+            },
+            {
+                "nombre": "Litigación",
+                "calificacion": 88
             }
         ]
     },
     {
         "id": 13,
-        "nombre": "Ricardo Herrera",
-        "edad": 20,
-        "carrera": "Ciencias Políticas",
+        "nombre": "Nadia Herrera",
+        "edad": 19,
+        "carrera": "Ingeniería en Sistemas",
         "materias": [
             {
-                "nombre": "Teoría Política",
-                "calificacion": 90
-            },
-            {
-                "nombre": "Sistemas de Gobierno",
-                "calificacion": 88
-            },
-            {
-                "nombre": "Relaciones Internacionales",
+                "nombre": "Inteligencia Artificial",
                 "calificacion": 91
             },
             {
-                "nombre": "Políticas Públicas",
-                "calificacion": 87
+                "nombre": "Base de Datos",
+                "calificacion": 90
+            },
+            {
+                "nombre": "Desarrollo de Software",
+                "calificacion": 88
+            },
+            {
+                "nombre": "Arquitectura de Software",
+                "calificacion": 92
             }
         ]
     },
     {
         "id": 14,
-        "nombre": "Lucía Romero",
+        "nombre": "Esteban Silva",
         "edad": 22,
-        "carrera": "Comunicación",
+        "carrera": "Medicina",
         "materias": [
             {
-                "nombre": "Teoría de la Comunicación",
-                "calificacion": 93
-            },
-            {
-                "nombre": "Producción Audiovisual",
+                "nombre": "Anatomía Patológica",
                 "calificacion": 90
             },
             {
-                "nombre": "Comunicación Organizacional",
+                "nombre": "Medicina Familiar",
+                "calificacion": 91
+            },
+            {
+                "nombre": "Epidemiología",
                 "calificacion": 88
             },
             {
-                "nombre": "Periodismo",
-                "calificacion": 91
+                "nombre": "Salud Mental",
+                "calificacion": 89
             }
         ]
     },
     {
         "id": 15,
-        "nombre": "Fernando Medina",
+        "nombre": "Mariana Ortega",
         "edad": 21,
-        "carrera": "Diseño Gráfico",
+        "carrera": "Derecho",
         "materias": [
             {
-                "nombre": "Fundamentos del Diseño",
-                "calificacion": 88
+                "nombre": "Derecho Civil",
+                "calificacion": 94
             },
             {
-                "nombre": "Tipografía",
-                "calificacion": 90
+                "nombre": "Derecho Penal",
+                "calificacion": 91
             },
             {
-                "nombre": "Fotografía",
-                "calificacion": 92
-            },
-            {
-                "nombre": "Ilustración",
+                "nombre": "Derecho Procesal",
                 "calificacion": 89
+            },
+            {
+                "nombre": "Técnicas de Litigación",
+                "calificacion": 90
             }
         ]
     },
     {
         "id": 16,
-        "nombre": "Natalia Paredes",
-        "edad": 19,
-        "carrera": "Química",
+        "nombre": "Juanita López",
+        "edad": 20,
+        "carrera": "Ingeniería en Sistemas",
         "materias": [
             {
-                "nombre": "Química General",
+                "nombre": "Redes de Computadoras",
+                "calificacion": 92
+            },
+            {
+                "nombre": "Sistemas Distribuidos",
                 "calificacion": 90
             },
             {
-                "nombre": "Química Orgánica",
-                "calificacion": 91
-            },
-            {
-                "nombre": "Química Inorgánica",
+                "nombre": "Ciberseguridad",
                 "calificacion": 88
             },
             {
-                "nombre": "Bioquímica",
-                "calificacion": 89
+                "nombre": "Desarrollo Móvil",
+                "calificacion": 91
             }
         ]
     },
     {
         "id": 17,
-        "nombre": "Pablo Salazar",
+        "nombre": "Carlos Paredes",
         "edad": 23,
-        "carrera": "Historia",
+        "carrera": "Medicina",
         "materias": [
             {
-                "nombre": "Historia Universal",
-                "calificacion": 92
+                "nombre": "Medicina de Emergencias",
+                "calificacion": 91
             },
             {
-                "nombre": "Historia de México",
-                "calificacion": 89
-            },
-            {
-                "nombre": "Teoría Histórica",
+                "nombre": "Ginecología y Obstetricia",
                 "calificacion": 90
             },
             {
-                "nombre": "Historia Contemporánea",
-                "calificacion": 91
+                "nombre": "Terapia Intensiva",
+                "calificacion": 89
+            },
+            {
+                "nombre": "Salud Pública",
+                "calificacion": 92
             }
         ]
     },
     {
         "id": 18,
-        "nombre": "Valeria Cordero",
-        "edad": 21,
-        "carrera": "Estadística",
+        "nombre": "Isabel Torres",
+        "edad": 22,
+        "carrera": "Derecho",
         "materias": [
             {
-                "nombre": "Estadística Descriptiva",
+                "nombre": "Derecho de los Derechos Humanos",
                 "calificacion": 90
             },
             {
-                "nombre": "Inferencia Estadística",
-                "calificacion": 89
-            },
-            {
-                "nombre": "Probabilidades",
+                "nombre": "Derecho de la Competencia",
                 "calificacion": 91
             },
             {
-                "nombre": "Diseño de Experimentos",
+                "nombre": "Derecho Internacional Público",
                 "calificacion": 88
+            },
+            {
+                "nombre": "Derecho Comparado",
+                "calificacion": 89
             }
         ]
     },
     {
         "id": 19,
-        "nombre": "Arturo Cabrera",
-        "edad": 20,
-        "carrera": "Matemáticas",
+        "nombre": "Alberto Salazar",
+        "edad": 21,
+        "carrera": "Ingeniería en Sistemas",
         "materias": [
             {
-                "nombre": "Cálculo Diferencial",
-                "calificacion": 91
+                "nombre": "Desarrollo de Aplicaciones",
+                "calificacion": 93
             },
             {
-                "nombre": "Álgebra Lineal",
+                "nombre": "Inteligencia de Negocios",
                 "calificacion": 90
             },
             {
-                "nombre": "Ecuaciones Diferenciales",
+                "nombre": "Metodologías Ágiles",
                 "calificacion": 89
             },
             {
-                "nombre": "Análisis Numérico",
-                "calificacion": 92
+                "nombre": "Big Data",
+                "calificacion": 91
             }
         ]
     },
     {
         "id": 20,
-        "nombre": "Isabel Torres",
-        "edad": 22,
-        "carrera": "Administración",
+        "nombre": "Fernanda Castro",
+        "edad": 19,
+        "carrera": "Medicina",
         "materias": [
             {
-                "nombre": "Principios de Administración",
-                "calificacion": 93
+                "nombre": "Medicina Preventiva",
+                "calificacion": 92
             },
             {
-                "nombre": "Comportamiento Organizacional",
-                "calificacion": 91
+                "nombre": "Infectología",
+                "calificacion": 90
             },
             {
-                "nombre": "Marketing",
+                "nombre": "Cirugía General",
                 "calificacion": 88
             },
             {
-                "nombre": "Finanzas",
-                "calificacion": 90
+                "nombre": "Urgencias Médicas",
+                "calificacion": 91
             }
         ]
     },
     {
         "id": 21,
-        "nombre": "Oscar Vega",
-        "edad": 21,
-        "carrera": "Ingeniería Electrónica",
+        "nombre": "Joaquín Mendoza",
+        "edad": 20,
+        "carrera": "Derecho",
         "materias": [
             {
-                "nombre": "Circuitos Eléctricos",
-                "calificacion": 90
+                "nombre": "Derecho de la Propiedad Intelectual",
+                "calificacion": 91
             },
             {
-                "nombre": "Sistemas Digitales",
-                "calificacion": 92
-            },
-            {
-                "nombre": "Electromagnetismo",
+                "nombre": "Ética y Deontología",
                 "calificacion": 89
             },
             {
-                "nombre": "Control de Sistemas",
+                "nombre": "Sistema Jurídico",
                 "calificacion": 88
+            },
+            {
+                "nombre": "Derecho Fiscal",
+                "calificacion": 92
             }
         ]
     },
     {
         "id": 22,
-        "nombre": "Renata Aguirre",
-        "edad": 20,
-        "carrera": "Veterinaria",
+        "nombre": "Laura Ruiz",
+        "edad": 21,
+        "carrera": "Ingeniería en Sistemas",
         "materias": [
             {
-                "nombre": "Anatomía Animal",
-                "calificacion": 91
+                "nombre": "Programación de Juegos",
+                "calificacion": 94
             },
             {
-                "nombre": "Fisiología Veterinaria",
+                "nombre": "Interacción Hombre-Máquina",
                 "calificacion": 90
             },
             {
-                "nombre": "Nutrición Animal",
-                "calificacion": 88
+                "nombre": "Realidad Aumentada",
+                "calificacion": 89
             },
             {
-                "nombre": "Cirugía Veterinaria",
-                "calificacion": 89
+                "nombre": "Desarrollo de Proyectos",
+                "calificacion": 91
             }
         ]
     },
     {
         "id": 23,
-        "nombre": "Hugo Ramírez",
-        "edad": 23,
-        "carrera": "Sociología",
+        "nombre": "José Ángel",
+        "edad": 22,
+        "carrera": "Medicina",
         "materias": [
             {
-                "nombre": "Teoría Sociológica",
-                "calificacion": 92
-            },
-            {
-                "nombre": "Métodos Cuantitativos",
+                "nombre": "Medicina del Deporte",
                 "calificacion": 90
             },
             {
-                "nombre": "Sociología Urbana",
+                "nombre": "Odontología",
                 "calificacion": 88
             },
             {
-                "nombre": "Sociología Rural",
+                "nombre": "Neurología",
                 "calificacion": 91
+            },
+            {
+                "nombre": "Medicina Familiar",
+                "calificacion": 89
             }
         ]
     },
     {
         "id": 24,
-        "nombre": "Marta Ceballos",
-        "edad": 21,
-        "carrera": "Antropología",
+        "nombre": "Marta López",
+        "edad": 23,
+        "carrera": "Derecho",
         "materias": [
             {
-                "nombre": "Antropología Cultural",
+                "nombre": "Derecho de la Infancia",
+                "calificacion": 93
+            },
+            {
+                "nombre": "Derecho de la Mujer",
                 "calificacion": 90
             },
             {
-                "nombre": "Antropología Social",
-                "calificacion": 92
-            },
-            {
-                "nombre": "Métodos de Investigación",
-                "calificacion": 89
-            },
-            {
-                "nombre": "Antropología Física",
+                "nombre": "Derecho Internacional Privado",
                 "calificacion": 88
+            },
+            {
+                "nombre": "Teoría General del Derecho",
+                "calificacion": 91
             }
         ]
     },
     {
         "id": 25,
-        "nombre": "Gustavo Parra",
-        "edad": 22,
-        "carrera": "Geografía",
+        "nombre": "Victoria Ríos",
+        "edad": 19,
+        "carrera": "Ingeniería en Sistemas",
         "materias": [
             {
-                "nombre": "Geografía Física",
-                "calificacion": 91
-            },
-            {
-                "nombre": "Geografía Humana",
+                "nombre": "Computación Cuántica",
                 "calificacion": 90
             },
             {
-                "nombre": "Cartografía",
+                "nombre": "Sistemas de Información",
+                "calificacion": 91
+            },
+            {
+                "nombre": "Redes de Computadoras",
                 "calificacion": 88
             },
             {
-                "nombre": "Planificación Territorial",
+                "nombre": "Desarrollo de Software Móvil",
                 "calificacion": 89
             }
         ]
     },
     {
         "id": 26,
-        "nombre": "Nadia Herrera",
-        "edad": 19,
-        "carrera": "Lingüística",
+        "nombre": "Gonzalo Vega",
+        "edad": 20,
+        "carrera": "Medicina",
         "materias": [
             {
-                "nombre": "Fonética",
-                "calificacion": 92
+                "nombre": "Medicina Comunitaria",
+                "calificacion": 91
             },
             {
-                "nombre": "Sintaxis",
-                "calificacion": 90
-            },
-            {
-                "nombre": "Semántica",
+                "nombre": "Terapia Física",
                 "calificacion": 88
             },
             {
-                "nombre": "Psicolingüística",
+                "nombre": "Psiquiatría",
                 "calificacion": 89
+            },
+            {
+                "nombre": "Medicina Legal",
+                "calificacion": 90
             }
         ]
     },
     {
         "id": 27,
-        "nombre": "Iván Cruz",
-        "edad": 20,
-        "carrera": "Literatura",
+        "nombre": "Patricia López",
+        "edad": 21,
+        "carrera": "Derecho",
         "materias": [
             {
-                "nombre": "Literatura Universal",
-                "calificacion": 91
+                "nombre": "Derecho de la Responsabilidad",
+                "calificacion": 90
             },
             {
-                "nombre": "Teoría Literaria",
-                "calificacion": 89
-            },
-            {
-                "nombre": "Literatura Hispanoamericana",
+                "nombre": "Derecho Penal Especial",
                 "calificacion": 88
             },
             {
-                "nombre": "Literatura Mexicana",
-                "calificacion": 90
+                "nombre": "Aspectos Internacionales del Derecho",
+                "calificacion": 92
+            },
+            {
+                "nombre": "Derecho Laboral Internacional",
+                "calificacion": 91
             }
         ]
     },
     {
         "id": 28,
-        "nombre": "Esteban Silva",
-        "edad": 23,
-        "carrera": "Teología",
+        "nombre": "Carlos Quintero",
+        "edad": 22,
+        "carrera": "Ingeniería en Sistemas",
         "materias": [
             {
-                "nombre": "Historia de la Teología",
-                "calificacion": 90
+                "nombre": "Ciencia de Datos",
+                "calificacion": 94
             },
             {
-                "nombre": "Teología Sistemática",
-                "calificacion": 92
+                "nombre": "Programación Funcional",
+                "calificacion": 91
             },
             {
-                "nombre": "Ética Teológica",
+                "nombre": "DevOps",
                 "calificacion": 88
             },
             {
-                "nombre": "Biblia y Exégesis",
-                "calificacion": 91
+                "nombre": "Arquitectura de Redes",
+                "calificacion": 90
             }
         ]
     },
     {
         "id": 29,
-        "nombre": "Mariana Ortega",
-        "edad": 21,
-        "carrera": "Relaciones Internacionales",
+        "nombre": "Silvia Méndez",
+        "edad": 20,
+        "carrera": "Medicina",
         "materias": [
             {
-                "nombre": "Teoría de Relaciones Internacionales",
-                "calificacion": 93
+                "nombre": "Inmunología",
+                "calificacion": 91
             },
             {
-                "nombre": "Política Exterior",
+                "nombre": "Medicina Tropical",
                 "calificacion": 90
             },
             {
-                "nombre": "Derecho Internacional",
+                "nombre": "Salud Pública",
                 "calificacion": 89
             },
             {
-                "nombre": "Economía Internacional",
+                "nombre": "Medicina Preventiva",
                 "calificacion": 88
             }
         ]
     },
     {
         "id": 30,
-        "nombre": "Diego León",
-        "edad": 22,
-        "carrera": "Biotecnología",
+        "nombre": "Diego Ramírez",
+        "edad": 23,
+        "carrera": "Derecho",
         "materias": [
             {
-                "nombre": "Biotecnología Vegetal",
-                "calificacion": 91
+                "nombre": "Teoría del Derecho Penal",
+                "calificacion": 92
             },
             {
-                "nombre": "Biotecnología Animal",
+                "nombre": "Derecho Comparado",
                 "calificacion": 90
             },
             {
-                "nombre": "Genómica",
+                "nombre": "Ética Profesional",
                 "calificacion": 88
             },
             {
-                "nombre": "Bioinformática",
-                "calificacion": 89
+                "nombre": "Derecho de la Propiedad Intelectual",
+                "calificacion": 91
             }
         ]
     }
