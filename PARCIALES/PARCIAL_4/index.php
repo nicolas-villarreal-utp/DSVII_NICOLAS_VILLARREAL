@@ -30,10 +30,7 @@ $resultados = $googleBooks->buscarLibros($query);
 // Mostrar resultados de búsqueda
 foreach ($resultados['items'] as $item) {
 
-    //print_r($item);
-
     echo "ID: " . $item['id'] . "<br>";
-
     echo "Título: " . $item['volumeInfo']['title'] . "<br>";
     if (isset($item['volumeInfo']['authors'])) {
         echo "Autor: " . implode(", ", $item['volumeInfo']['authors']) . "<br>";
@@ -55,15 +52,11 @@ echo '<hr>';
 // Obtener libros guardados por un usuario específico
 $libros_usuario = $libro->obtenerLibrosPorUsuario(5);
 
-//print_r($libros_usuario);
-
 // Mostrar resultados de búsqueda
 foreach ($libros_usuario as $libro) {
 
-    //print_r($libro);
-
     echo "Título: " . $libro['titulo'] . "<br>";
-    echo "Autor: " . ", ", $libro['autor'] . "<br>";
+    echo "Autor: " . $libro['autor'] . "<br>";
     echo "Reseña Personal: " . $libro['resena_personal'] . "<br>";
 
 }
