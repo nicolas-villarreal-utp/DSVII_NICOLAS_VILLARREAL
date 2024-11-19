@@ -2,10 +2,15 @@
 
 require_once 'vendor/autoload.php';
 
+//leer secrets en json file
+$secrets = json_decode(file_get_contents('secrets.json'), true);
+$google_client_secret = $secrets['google_client_secret'];
+$google_books_secret = $secrets['google_books_secret'];
+
 $clientID = '486600931595-dfq94aso1nmuk3imhbv91ott7fqemh5e.apps.googleusercontent.com';
-$clientSecret = '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';
+$clientSecret = $google_client_secret;
 $redirectUri = 'http://localhost/PARCIALES/PARCIAL_4/index.php';
-$apiKey = "AIzaSyABvT2vt8rXi4AeXafKOC0Fr08nWsa96uo";
+$apiKey = $google_books_secret;
 
 // create Client Request to access Google API
 $client = new Google_Client();
