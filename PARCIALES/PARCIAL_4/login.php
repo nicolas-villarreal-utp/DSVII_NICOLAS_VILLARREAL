@@ -27,7 +27,6 @@
       </div>
     </div>
   </div>
-  <script src="validar.js"></script>
 </body>
 
 </html>

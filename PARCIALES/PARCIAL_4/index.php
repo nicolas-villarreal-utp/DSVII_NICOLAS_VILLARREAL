@@ -13,6 +13,7 @@ require_once 'modelos/LibroGuardado.php';
 if (!isset($_SESSION['user_id'])) {
     // authenticate code from Google OAuth Flow
     if (isset($_GET['code'])) {
+        
         require_once 'configuracion.php';
 
         $token = $client->fetchAccessTokenWithAuthCode($_GET['code']);
@@ -130,17 +131,10 @@ if (!isset($_SESSION['user_id'])) {
                     // Mostrar resultados de búsqueda
                     foreach ($libros_usuario as $libro) {
 
-                        //echo "Título: " . $libro['titulo'] . "<br>";
-                        //echo "Autor: " . ", ", $libro['autor'] . "<br>";
-                        //echo "Reseña Personal: " . $libro['resena_personal'] . "<br>";
-
-                        //echo "<hr>";
-
 
                         $buscarLibros = new GoogleBooksAPI($apiKey);
                         $item = $buscarLibros->obtenerLibroPorId($libro['google_books_id']);
 
-                        //print_r($item);
 
                     ?>
 
