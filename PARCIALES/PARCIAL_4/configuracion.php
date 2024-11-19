@@ -4,6 +4,7 @@ require_once 'vendor/autoload.php';
 
 //leer secrets en json file
 $secrets = json_decode(file_get_contents('secrets.json'), true);
+
 $google_client_id = $secrets['google_client_id'];
 $google_client_secret = $secrets['google_client_secret'];
 $google_books_secret = $secrets['google_books_secret'];
