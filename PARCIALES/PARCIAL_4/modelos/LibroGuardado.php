@@ -30,17 +30,24 @@ class LibroGuardado {
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function guardarLibroDesdeGoogleBooks(GoogleBooksAPI $googleBooksAPI, $user_id, $google_books_id) {
+    public function guardarLibroDesdeGoogleBooks(GoogleBooksAPI $googleBooksAPI, $user_id, $google_books_id, $resena_personal) {
         
         $libroData = $googleBooksAPI->obtenerLibroPorId($google_books_id);
     
         $titulo = $libroData['volumeInfo']['title'] ?? '';
         $autor = implode(", ", $libroData['volumeInfo']['authors'] ?? []);
         $imagen_portada = $libroData['volumeInfo']['imageLinks']['thumbnail'] ?? '';
-        $resena_personal = ''; // Campo de reseña personal vacío para que lo agregue el usuario
-    
+        
         $this->guardarLibro($user_id, $google_books_id, $titulo, $autor, $imagen_portada, $resena_personal);
     }
     
+    //Funcion ELiminar Libro
+    public function eliminarLibro($libroguardado_id) {
+        $query = "DELETE FROM " . $this->table . " WHERE id = :libroguardado_id";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(":libroguardado_id", $libroguardado_id, PDO::PARAM_INT);
+
+        return $stmt->execute();
+    }
 }
 ?>

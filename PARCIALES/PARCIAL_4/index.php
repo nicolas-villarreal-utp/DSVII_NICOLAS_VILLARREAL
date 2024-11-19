@@ -1,64 +1,185 @@
 <?php
+session_start();
+
+error_reporting(E_ALL & ~E_DEPRECATED & ~E_STRICT);
+
 require_once 'database.php';
+require_once 'configuracion.php';
+require_once 'api/GoogleBooksAPI.php';
 require_once 'modelos/Usuario.php';
 require_once 'modelos/LibroGuardado.php';
-require_once 'api/GoogleBooksAPI.php';
 
-// Conectar a la base de datos
-$database = new Database();
-$db = $database->connect();
+//Validar usuario en session
+if (!isset($_SESSION['user_id'])) {
+    // authenticate code from Google OAuth Flow
+    if (isset($_GET['code'])) {
+        require_once 'configuracion.php';
 
-// Crear un nuevo usuario
-$usuario = new Usuario($db);
-//$usuario->crearUsuario("email@ejemplo.com", "Nombre Usuario", "google_id_123");
+        $token = $client->fetchAccessTokenWithAuthCode($_GET['code']);
+        $client->setAccessToken($token['access_token']);
 
-// Guardar un libro para un usuario
-$libro = new LibroGuardado($db);
-//$libro->guardarLibro(1, "google_books_id_456", "Título del Libro", "Autor del Libro", "URL_de_imagen", "Reseña del libro");
+        // get profile info
+        $google_oauth = new Google_Service_Oauth2($client);
+        $google_account_info = $google_oauth->userinfo->get();
 
-// Obtener todos los usuarios
-$usuarios = $usuario->obtenerUsuarios();
-print_r($usuarios);
+        $email =  $google_account_info->email;
+        $name =  $google_account_info->name;
+        $google_id = $google_account_info->getId();
 
-$apiKey = "AIzaSyBsUUK1e1BVTQNUBHiL_uBB51NIBxeewrk"; // Reemplaza con tu clave de API de Google Books
-$googleBooks = new GoogleBooksAPI($apiKey);
+        // Conectar a la base de datos
+        $database = new Database();
+        $db = $database->connect();
 
-// Buscar libros por título o autor
-$query = "harry potter";
-$resultados = $googleBooks->buscarLibros($query);
+        // Crear un nuevo usuario
+        $usuario = new Usuario($db);
 
-// Mostrar resultados de búsqueda
-foreach ($resultados['items'] as $item) {
+        if (count($usuario->validarExiste($email)) > 0) {
 
-    echo "ID: " . $item['id'] . "<br>";
-    echo "Título: " . $item['volumeInfo']['title'] . "<br>";
-    if (isset($item['volumeInfo']['authors'])) {
-        echo "Autor: " . implode(", ", $item['volumeInfo']['authors']) . "<br>";
+            $usuarioExiste = $usuario->validarExiste($email);
+
+            //print_r($usuarioExiste);
+
+            $_SESSION['user_id'] = $usuarioExiste[0]['id'];
+            $_SESSION['user_name'] = $usuarioExiste[0]['nombre'];
+            $_SESSION['user_google_id'] = $usuarioExiste[0]['google_id'];
+            $_SESSION['user_email_address'] = $usuarioExiste[0]['email'];
+            //Profile Picture
+            $_SESSION['user_image'] = $google_account_info->picture;
+        } else {
+
+            $usuario->crearUsuario($email, $name, $google_id);
+
+            $usuarioExiste = $usuario->validarExiste($email);
+
+            $_SESSION['user_id'] = $usuarioExiste[0]['id'];
+            $_SESSION['user_name'] = $usuarioExiste[0]['nombre'];
+            $_SESSION['user_google_id'] = $usuarioExiste[0]['google_id'];
+            $_SESSION['user_email_address'] = $usuarioExiste[0]['email'];
+
+            //Profile Picture
+            $_SESSION['user_image'] = $google_account_info->picture;
+        }
+    } else {
+        // redirect to login.php
+        header('location:login.php');
     }
-    if (isset($item['volumeInfo']['description'])) {
-        echo "Descripción: " . $item['volumeInfo']['description'] . "<br><br>";
-    }
 }
-
-// Obtener información específica de un libro por su ID de Google Books
-$googleBooksId = 'XLVvAAAACAAJ'; // Reemplaza con un ID válido de un libro en Google Books
-
-if($googleBooksId != 0){
-    $libro->guardarLibroDesdeGoogleBooks($googleBooks, 5, $googleBooksId);
-}
-
-echo '<hr>';
-
-// Obtener libros guardados por un usuario específico
-$libros_usuario = $libro->obtenerLibrosPorUsuario(5);
-
-// Mostrar resultados de búsqueda
-foreach ($libros_usuario as $libro) {
-
-    echo "Título: " . $libro['titulo'] . "<br>";
-    echo "Autor: " . $libro['autor'] . "<br>";
-    echo "Reseña Personal: " . $libro['resena_personal'] . "<br>";
-
-}
-
 ?>
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <title>Inicio</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-3">
+
+                <h1>Usuario</h1>
+                <img src="<?php echo $_SESSION['user_image']; ?>" alt="Profile Picture">
+                <p>Nombre: <?php echo $_SESSION['user_name']; ?></p>
+                <p>Email: <?php echo $_SESSION['user_email_address']; ?></p>
+                <p>Google ID: <?php echo $_SESSION['user_google_id']; ?></p>
+
+                <a class="btn btn-danger" href="logout.php">Cerrar Sesión</a>
+            </div>
+            <div class="col-9">
+
+
+                <div class="col-12">
+                    <h2>Buscar Libros</h2>
+                    <form action="buscarlibros.php" method="post">
+                        <div class="input-group mb-3">
+                            <input name="buscar" id="buscar" type="text" class="form-control" placeholder="Buscar libro" aria-label="Buscar libro" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <button type="submit" class="btn btn-outline-secondary">Buscar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-12">
+                    <h2>Mis Libros</h2>
+                    <?php
+
+                    // Conectar a la base de datos
+                    $database = new Database();
+                    $db = $database->connect();
+
+                    // Obtener libros guardados por un usuario específico
+                    $libro = new LibroGuardado($db);
+
+                    //Usuario de Session
+                    $usuario_id = $_SESSION['user_id'];
+
+                    $libros_usuario = $libro->obtenerLibrosPorUsuario($usuario_id);
+
+                    //print_r($libros_usuario);
+
+                    // Mostrar resultados de búsqueda
+                    foreach ($libros_usuario as $libro) {
+
+                        //echo "Título: " . $libro['titulo'] . "<br>";
+                        //echo "Autor: " . ", ", $libro['autor'] . "<br>";
+                        //echo "Reseña Personal: " . $libro['resena_personal'] . "<br>";
+
+                        //echo "<hr>";
+
+
+                        $buscarLibros = new GoogleBooksAPI($apiKey);
+                        $item = $buscarLibros->obtenerLibroPorId($libro['google_books_id']);
+
+                        //print_r($item);
+
+                    ?>
+
+                        <div class="card" style="margin: 10px">
+                            <img class="card-img-top" style="padding: 10px; max-height: 200px; object-fit: contain" src="<?php echo $item['volumeInfo']['imageLinks']['thumbnail'] ?>" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title"><?php echo $item['volumeInfo']['title'] ?></h5>
+                                <h6 class="card-subtitle mb-2 text-muted">
+                                    <?php
+                                    if (isset($item['volumeInfo']['authors'])) {
+                                        echo "Autor: " . implode(", ", $item['volumeInfo']['authors']) . "<br>";
+                                    }
+                                    ?>
+                                </h6>
+                                <p class="card-text">
+                                    <?php
+                                    if (isset($item['volumeInfo']['description'])) {
+                                        //echo "Descripción: " . $item['volumeInfo']['description'] . "<br><br>";
+                                    }
+
+                                    echo "Reseña Personal: " . $libro['resena_personal'] . "<br>";
+
+                                    ?>
+                                </p>
+                                <form action="eliminarlibro.php" method="post">
+                                    <input type="hidden" name="libroguardado_id" value="<?php echo $libro['id']; ?>">
+                                    <button type="submit" class="btn btn-danger float-right">Eliminar</button>
+                                </form>
+                            </div>
+                        </div>
+
+                    <?php
+                    }
+
+                    ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -25,5 +25,15 @@ class Usuario {
 
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public function validarExiste($email){
+        $query = "SELECT * FROM " . $this->table . " WHERE email = '" . $email . "'";
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute();
+
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        return $result;
+    }
 }
 ?>
