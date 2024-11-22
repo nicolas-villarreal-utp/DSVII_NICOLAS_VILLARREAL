@@ -17,13 +17,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         //Validar que el password tiene al menos 3 caracteres
         if (strlen($password) < 3) {
-            echo 'La contraseña debe tener al menos 3 caracteres';
+            echo '<span style="color:red;">La contraseña debe tener al menos 3 caracteres</span>';
+            //echo 'La contraseña debe tener al menos 3 caracteres';
 
             return;
         } else {
             //Validar que el password tiene no mas de 8 caracteres
             if (strlen($password) > 8) {
-                echo 'La contraseña no puede tener más de 8 caracteres';
+                echo '<span style="color:red;">La contraseña no puede tener más de 8 caracteres</span>';
+                //echo 'La contraseña no puede tener más de 8 caracteres';
 
                 return;
             } else {
@@ -31,7 +33,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $datos = new Datos();
 
                 if (!$datos->validarUsuario($email, $password)) {
-                    echo 'Usuario o contraseña incorrectos';
+                    echo '<span style="color:red;">Usuario o contraseña incorrectos</span>';
+                    //echo 'Usuario o contraseña incorrectos';
                 } else {
 
                     session_start();
