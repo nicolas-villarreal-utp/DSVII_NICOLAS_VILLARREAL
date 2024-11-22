@@ -1,25 +1,24 @@
 <?php
 // Modelos/Conexion.php
 
-class Conexion {
-    public static function conectar() {
-        // Cargar los datos de conexión desde el archivo JSON
-        $config = json_decode(file_get_contents('config/db_config.json'), true);
+class Conexion
+{
 
-        // Establecer la conexión usando los parámetros del archivo JSON
-        $host = $config['host'];
-        $username = $config['username'];
-        $password = $config['password'];
-        $dbname = $config['dbname'];
+    private $host = "db_utp";
+    private $dbname = "utp_viajes";
+    private $username = "utp";
+    private $password = "Panama.01";
+    public $conn;
 
-        // Crear la conexión
-        $mysqli = new mysqli($host, $username, $password, $dbname);
-
-        // Verificar si hubo un error en la conexión
-        if ($mysqli->connect_error) {
-            die("Conexión fallida: " . $mysqli->connect_error);
+    public function conectar()
+    {
+        $this->conn = null;
+        try {
+            $this->conn = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->dbname . ";charset=utf8mb4", $this->username, $this->password);
+            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        } catch (PDOException $e) {
+            echo "Error de conexión: " . $e->getMessage();
         }
-
-        return $mysqli;
+        return $this->conn;
     }
 }

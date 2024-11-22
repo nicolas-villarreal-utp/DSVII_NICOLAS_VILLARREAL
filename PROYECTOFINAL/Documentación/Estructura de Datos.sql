@@ -42,14 +42,16 @@ CREATE TABLE reservas (
     FOREIGN KEY (paquete_id) REFERENCES paquetes(id) ON DELETE CASCADE
 );
 
--- Crear la tabla de Usuarios (asociados a Clientes y Roles)
-CREATE TABLE usuarios (
+CREATE TABLE IF NOT EXISTS usuarios (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    cliente_id INT NOT NULL,
-    rol_id INT NOT NULL,
-    FOREIGN KEY (cliente_id) REFERENCES clientes(id) ON DELETE CASCADE,
-    FOREIGN KEY (rol_id) REFERENCES roles(id) ON DELETE CASCADE
+    email VARCHAR(255) NOT NULL UNIQUE,
+    nombre VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+INSERT INTO usuarios (email, nombre, password)
+VALUES ('nicolas.villarrealh@gmail.com', 'Nicolás Villarreal', 'contraseñasegura');
 
 -- Crear la tabla de Auditoría (opcional, para registrar cambios importantes)
 CREATE TABLE auditoria (
@@ -65,3 +67,6 @@ CREATE INDEX idx_email ON clientes(email);
 CREATE INDEX idx_google_id ON clientes(google_id);
 CREATE INDEX idx_cliente_id ON reservas(cliente_id);
 CREATE INDEX idx_paquete_id ON reservas(paquete_id);
+
+
+

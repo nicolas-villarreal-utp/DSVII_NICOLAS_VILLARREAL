@@ -1,48 +1,58 @@
 <?php
-// login.php
-require_once 'vendor/autoload.php'; // Asegúrate de haber instalado el cliente de Google via Composer
+// index.php
+//session_start();
 
-session_start();
+//si el method es GET
+if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
-// Configuración de Google Client
-$client = new Google_Client();
-$client->setAuthConfig('google_credentials.json');
-$client->addScope(Google_Service_Oauth2::USERINFO_PROFILE);
-$client->addScope(Google_Service_Oauth2::USERINFO_EMAIL);
-$client->setRedirectUri('http://localhost/tu-aplicacion/login.php');
+    //Si tengo code de Google
+    if (isset($_GET['code'])) {
+        require_once 'vendor/autoload.php'; // Asegúrate de haber instalado el cliente de Google via Composer
 
-// Verificar si ya hay un token de acceso en la sesión
-if (isset($_GET['code'])) {
-    $token = $client->fetchAccessTokenWithAuthCode($_GET['code']);
-    $_SESSION['access_token'] = $token;
+        // Configuración de Google Client
+        $client = new Google_Client();
+        $client->setAuthConfig('config/google_credentials.json');
+        $client->addScope(Google_Service_Oauth2::USERINFO_PROFILE);
+        $client->addScope(Google_Service_Oauth2::USERINFO_EMAIL);
+        $client->setRedirectUri('http://localhost/proyectofinal/index.php');
 
-    // Redirigir al usuario a home.php
-    header('Location: home.php');
-    exit();
-}
+        // Obtener token de acceso
+        $token = $client->fetchAccessTokenWithAuthCode($_GET['code']);
+        $_SESSION['access_token'] = $token;
 
-// Si el usuario ya tiene un token de acceso, obtener la información del perfil
-if (isset($_SESSION['access_token']) && $_SESSION['access_token']) {
-    $client->setAccessToken($_SESSION['access_token']);
-    $oauth = new Google_Service_Oauth2($client);
-    $userInfo = $oauth->userinfo->get();
+        //Guardar informacion del usuario en session
+        $oauth = new Google_Service_Oauth2($client);
+        $userInfo = $oauth->userinfo->get();
+        $_SESSION['id'] =  $userInfo['id'];
+        $_SESSION['name'] =  $userInfo['name'];
+        $_SESSION['email'] =  $userInfo['email'];
+        $_SESSION['picture'] =  $userInfo['picture'];
+    }
+} elseif ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-    // Guardar el usuario en la base de datos
-    require_once 'Modelos/Cliente.php';
+    require_once 'Modelos/Conexion.php';
     require_once 'Modelos/Usuario.php';
 
-    $cliente = new Cliente();
-    $cliente->guardarCliente($userInfo['name'], $userInfo['email'], $userInfo['id']);
+    $email = $_POST['email'];
+    $password = $_POST['password'];
 
-    $usuario = new Usuario();
-    $usuario->guardarUsuario($userInfo['id'], $userInfo['email'], 1); // Rol de Cliente = 1
+    $db = new Conexion();
+    $db = $db->conectar();
 
-    // Redirigir a home.php
-    header('Location: home.php');
-    exit();
+    $usuario = new Usuario($db);
+
+    if ($usuario->validarUsuario($email, $password)) {
+
+        session_start();
+
+        $_SESSION['usuario'] = $email;
+
+        header('Location: index.php');
+    } else {
+        echo 'Usuario o contraseña incorrectos <br>';
+        //Regresar a la pagina de login
+        echo '<a class="btn btn-primary" href="iniciarsesion.php">Regresar</a>';
+    }
+    
+
 }
-
-// Si no hay token, redirigir al inicio de sesión de Google
-$authUrl = $client->createAuthUrl();
-header("Location: " . $authUrl);
-exit();
