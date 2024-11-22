@@ -85,7 +85,7 @@
 
                                 <input type="hidden" name="google_books_id" value="<?php echo $item['id']; ?>">
                                 <input type="hidden" name="titulo" value="<?php echo $item['volumeInfo']['title']; ?>">
-                                <input type="hidden" name="autor" value="<?php echo implode(", ", $item['volumeInfo']['authors']); ?>">
+                                <input type="hidden" name="autor" value="<?php echo isset($item['volumeInfo']['authors']) ? implode(", ", $item['volumeInfo']['authors']) : ''; ?>">
                                 <input type="hidden" name="imagen" value="<?php echo $item['volumeInfo']['imageLinks']['thumbnail']; ?>">
                                 <input type="hidden" name="resena" value="<?php echo isset($item['volumeInfo']['description']) ? $item['volumeInfo']['description'] : ''; ?>">
                                 <button type="submit" class="btn btn-success float-right">Guardar Libro</button>
